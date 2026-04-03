@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knapsack Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Knapsack Problem Visualizer</h1>
+    <p>This is a simple visualizer for the Dynamic Programming approach in solving the classic Knapsack Problem.</p>
+    <div id = "UserInput">
+        <h3>Add Items</h3>
+        <form>
+            Name: <input id="itemName" type="text" placeholder="Name"><br>
+            Item Value: <input id="itemValue" type="number" min="1" required value="1"><br>
+            Weight: <input id="itemWeight" type="number" min="1" required value="1"><br>
+            <button type="button" onclick="addItem()">Add Item</button>
+        </form>
+        <table id="itemDisplay">
+            <tr>
+            <th>Name</th>
+            <th>Value</th>
+            <th>Weight</th>
+            </tr>
+        </table>        
+    </div>
+
+    <div>
+        <h3>Find Solution</h3>
+        <p>The problem will be solved using Bottom Up Tabulation approach.</p>
+        Knapsack Capacity <input id="capacity" type="number" min="1" required>
+        <button onclick="generateDP()">Solve</button>
+        <table id="dpDisplay"></table>
+        <p id="solution"></p>
+    </div>
+    <script src = "script.js"></script>
+</body>
+</body>
+</html>
