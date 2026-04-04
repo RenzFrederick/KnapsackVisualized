@@ -92,6 +92,7 @@ function generateDP(){
 }
 
 function displayDP(){
+    dpDisplay.innerHTML = ''
     for (let i = 0; i < dp.length; i++){
         let row = dpDisplay.insertRow(-1);
         let label = row.insertCell(-1);
@@ -113,17 +114,18 @@ function backtrack(){
     let kb = W;
 
     item_output = [];
-    while (ib >= 0 || kb >= 0){
-
+    while (ib > 0 || kb > 0){
+        
         if (dp[ib][kb] != dp[ib-1][kb]){
-            iName = itemList[ib].itemName;
+            iName = itemList[ib-1].itemName;
             item_output.push(iName);
-            kb = kb - itemList[ib].itemWeight;
+            kb = kb - itemList[ib-1].itemWeight;
             ib = ib-1;
         }
         else{
             ib = ib-1;
         }
+    
     }
 
     solution.innerHTML = 'Solution: ' + item_output 
