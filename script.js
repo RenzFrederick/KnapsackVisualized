@@ -19,18 +19,29 @@ const displayHeader =
     
 const dpDisplay = document.getElementById("dpDisplay");
 const solution = document.getElementById("solution");
+const errorText = document.getElementById("errorText");
 
 let itemList = [];
 let errors = [];
 
 function addItem() {
-    let newItem = new kpItem(
-        inputName.value, 
-        Number(inputValue.value), 
-        Number(inputWeight.value));
-    itemList.push(newItem);
-    
-    displayTable();
+    errorText.innerHTML = "";
+    if (itemList.length < 4) {
+        if (inputName.value == "" || inputValue.value == "" || inputWeight.value == ""){
+            errorText.innerHTML = "Error: Please fill in all fields";
+            return;
+        }
+        let newItem = new kpItem(
+            inputName.value, 
+            Number(inputValue.value), 
+            Number(inputWeight.value));
+        itemList.push(newItem);
+        
+        displayTable();
+    }
+    else{
+        errorText.innerHTML = "Error: Maximum of 4 items allowed";
+    }
 }
 
 function displayTable(){
@@ -55,7 +66,23 @@ let n = 0;
 let W = 0;
 
 function generateDP(){
-    
+    errorText.innerHTML = "";
+    if (itemList.length == 0){
+        errorText.innerHTML = "Error: Please add at least 1 item";
+        return;
+    }
+    if (inputCapacity.value == ""){
+        errorText.innerHTML = "Error: Please enter a capacity";
+        return;
+    }
+    if (inputCapacity.value < 0){
+        errorText.innerHTML = "Error: Capacity cannot be negative";
+        return;
+    }
+    if (inputCapacity.value > 7){
+        errorText.innerHTML = "Error: Capacity cannot be greater than 7";
+        return;
+    }
     dp = []
     n = itemList.length;
     W = Number(inputCapacity.value);

@@ -78,7 +78,7 @@ input[type="number"]{
 }
 
 #TableDisplay {
-    display: block;
+    display: flex;
     width: 200px;
 }
 
@@ -135,6 +135,9 @@ input[type="number"]{
     font-size: large;
 }
 
+#itemDisplay {
+    display: block;
+}
 #itemDisplay *{
     font-size: medium;
     text-align: center;
@@ -176,4 +179,17 @@ input[type="number"]{
     height: 50px;
     width: 50px;
     border-radius: 12%;
+}
+
+#errorText{
+    color: red;
+    position: absolute;
+    top: 150px;
+    font-size: medium;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 0%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
 }
