@@ -146,10 +146,6 @@ function backtrack(){
 
     let item_output = [];
 
-    solution.innerHTML = ''
-    let row = solution.insertRow(-1);
-    row.innerHTML = "Solution"
-
     while (ib > 0 && kb > 0){
         
         if (dp[ib][kb] != dp[ib-1][kb]){
@@ -164,6 +160,9 @@ function backtrack(){
     
     }
 
+    solution.innerHTML = ''
+    let row = solution.insertRow(-1);
+    row.innerHTML = "Solution"
     if (item_output.length > 0){
         for (let k = 0; k < item_output.length; k++){
             let row = solution.insertRow(-1);

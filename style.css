@@ -1,14 +1,35 @@
 
+/* ===========================
+   GLOBAL / BASE STYLES
+   =========================== */
+
 * {
     font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
     font-size: larger;
-    }
+}
 
 body {
-   background-color: #1d2321; 
-   position: relative;
-   display: block;
+    background-color: #1d2321;
+    position: relative;
+    display: block;
 }
+
+
+/* ===========================
+   BACKGROUND
+   =========================== */
+
+#bgSplash {
+    z-index: -1;
+    height: 1080px;
+    width: 1920px;
+    position: absolute;
+}
+
+
+/* ===========================
+   FORM / INPUT ELEMENTS
+   =========================== */
 
 input {
     background-color: #f5cce8;
@@ -16,13 +37,27 @@ input {
     height: 75px;
     width: 250px;
     text-align: center;
-    margin: 5px
+    margin: 5px;
 }
 
-input[type="number"]{
+input[type="number"] {
     width: 70px;
-    
 }
+
+#itemWeight,
+#capacity {
+    font-size: x-large;
+}
+
+#itemValue {
+    font-size: large;
+}
+
+
+/* ===========================
+   HEADER SECTION
+   =========================== */
+
 #header {
     height: 190px;
     width: 570px;
@@ -32,12 +67,17 @@ input[type="number"]{
     justify-content: center;
 }
 
-#header img{
+#header img {
     height: 250px;
     width: 750px;
     object-fit: contain;
-    padding: 0px
+    padding: 0px;
 }
+
+
+/* ===========================
+   USER INPUT SECTION
+   =========================== */
 
 #UserInput {
     display: flex;
@@ -48,26 +88,72 @@ input[type="number"]{
     justify-content: center;
     width: 750px;
     border-radius: 12px;
-    
 }
 
-#UserInput *{
+#UserInput * {
     display: inline-flex;
     align-items: center;
 }
 
-#Display{
+
+/* ===========================
+   BUTTONS
+   =========================== */
+
+#addButton {
+    height: 150px;
+    width: 75px;
+    display: flow;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    padding: 0px;
+}
+
+#addButton img {
+    height: 150px;
+    object-fit: contain;
+}
+
+#addButton img:hover {
+    filter: brightness(110%);
+}
+
+#solveButton {
+    height: 150px;
+    width: 75px;
+    display: flow;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    padding: 0px;
+}
+
+#solveButton img {
+    height: 150px;
+    object-fit: contain;
+}
+
+#solveButton img:hover {
+    filter: brightness(110%);
+}
+
+
+/* ===========================
+   DISPLAY CONTAINERS
+   =========================== */
+
+#Display {
     display: flex;
     margin: auto;
     align-items: center;
     justify-content: center;
 }
 
-#Display div{
+#Display div {
     display: inline-flex;
     margin: 10px;
-    background-color: #66516f;  
-    height: 350px;  
+    background-color: #66516f;
     border-radius: 12px;
     align-items: baseline;
     justify-content: center;
@@ -75,98 +161,32 @@ input[type="number"]{
 
 #DPDisplay {
     width: 550px;
+    height: 350px;
 }
 
 #TableDisplay {
     display: flex;
     width: 200px;
+    height: 350px;
 }
 
-#bgSplash{
-    z-index: -1;
-    height: 1080px;
-    width: 1920px;
-    position:absolute;
-}
 
-#addButton{
-    height: 150px;
-    width: 75px;
-    display: flow;
-    align-items: center;
-    justify-content: center;
-    margin: 2px;
-    padding: 0px;
-}
-
-#addButton img{
-    height: 150px;
-    object-fit: contain;
-}
-
-#addButton img:hover{
-    filter: brightness(110%);
-}
-
-#solveButton{
-    height: 150px;
-    width: 75px;
-    display: flow;
-    align-items: center;
-    justify-content: center;
-    margin: 2px;
-    padding: 0px;
-}
-
-#solveButton img:hover{
-    filter: brightness(110%);
-}
-
-#solveButton img{
-    height: 150px;
-    object-fit: contain;
-}
-
-#itemWeight, #capacity{
-    font-size: x-large;
-}
-
-#itemValue{
-    font-size: large;
-}
+/* ===========================
+   DATA DISPLAY / TABLES
+   =========================== */
 
 #itemDisplay {
     display: block;
 }
-#itemDisplay *{
+
+#itemDisplay * {
     font-size: medium;
     text-align: center;
     background-color: #f5cce8;
     border-radius: 10%;
 }
 
-#dpDisplay *{
-    font-size: medium;
-    text-align: center;
-    background-color: #f5cce8;
-    border-radius: 10%;
-    height: 50px;
-    width: 50px;
-    object-fit: contain;
-}
-
-#SolutionDisplay{
-    display: flex;
-    background-color: #66516f;
-    margin: auto;
-    padding: 15px;
-    align-items: left;
-    justify-content: left;
-    width: 750px;
-    border-radius: 12px;
-}
-
-#SolutionDisplay #solution *{
+#dpDisplay * {
     font-size: medium;
     text-align: center;
     background-color: #f5cce8;
@@ -174,14 +194,44 @@ input[type="number"]{
     height: 50px;
     width: 50px;
     object-fit: contain;
-} 
+}
+
 .cell {
     height: 50px;
     width: 50px;
     border-radius: 12%;
 }
 
-#errorText{
+
+/* ===========================
+   SOLUTION DISPLAY
+   =========================== */
+
+#SolutionDisplay {
+    display: flex;
+    background-color: #66516f;
+    justify-content: baseline;
+    margin: auto;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    width: 750px;
+    border-radius: 12px;
+}
+
+#solution * {
+    font-size: medium;
+    text-align: center;
+    background-color: #f5cce8;
+    border-radius: 10%;
+}
+
+
+/* ===========================
+   ERROR MESSAGES
+   =========================== */
+
+#errorText {
     color: red;
     position: absolute;
     top: 150px;
