@@ -18,7 +18,7 @@ const displayHeader =
     </tr>`;
     
 const dpDisplay = document.getElementById("dpDisplay");
-const solution = document.getElementById("SolutionDisplay");
+const solution = document.getElementById("solution");
 
 let itemList = [];
 let errors = [];
@@ -117,8 +117,13 @@ function backtrack(){
     let ib = n;
     let kb = W;
 
-    item_output = [];
-    while (ib > 0 || kb > 0){
+    let item_output = [];
+
+    solution.innerHTML = ''
+    let row = solution.insertRow(-1);
+    row.innerHTML = "Solution"
+
+    while (ib > 0 && kb > 0){
         
         if (dp[ib][kb] != dp[ib-1][kb]){
             iName = itemList[ib-1].itemName;
@@ -132,8 +137,15 @@ function backtrack(){
     
     }
 
-    solution.innerHTML = 'Solution: ' + item_output 
-    + '\nTotal Value:' + dp[n][W];
-    
+    if (item_output.length > 0){
+        for (let k = 0; k < item_output.length; k++){
+            let row = solution.insertRow(-1);
+            row.innerHTML = item_output[k]
+        } 
+    }
+    else{
+        let row = solution.insertRow(-1);
+        row.innerHTML = "None"
+    }
 
 }

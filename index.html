@@ -13,12 +13,12 @@
     </div>
     <div id = "UserInput">
         <form>
-            <input id="itemName" type="text" placeholder="Name"><br>
-            <input id="itemValue" type="number" min="1" required placeholder="Value"><br>
-            <input id="itemWeight" type="number" min="1" required placeholder="W"><br>
+            <input id="itemName" type="text" placeholder="Name" maxlength="7"><br>
+            <input id="itemValue" type="number" min="1" max="7" required placeholder="Value"><br>
+            <input id="itemWeight" type="number" min="1" max="7" required placeholder="W"><br>
             <div type="button" onclick="addItem()" id="addButton"><img src="public/addButton.png"></div>
             <div type="button" onclick="generateDP()" id="solveButton"><img src="public/solveButton.png"></div>
-            <input id="capacity" type="number" min="1" required placeholder="C">
+            <input id="capacity" type="number" min="1" max="7"required placeholder="C">
             
         </form>        
     </div>
@@ -39,7 +39,9 @@
     </div>
     <div id="SolutionDisplay">  
         <h5>Solution here</h5>             
-        <p id="solution"></p>
+        <table id="solution">
+
+        </table>
     </div>
     <script src = "script.js"></script>
 </body>
