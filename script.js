@@ -62,6 +62,7 @@ function displayTable(){
 
 //DP core
 let dp = [];
+let dpDisplayList = [];
 let n = 0; 
 let W = 0;
 
@@ -84,14 +85,18 @@ function generateDP(){
         return;
     }
     dp = []
+    dpDisplayList = []
     n = itemList.length;
     W = Number(inputCapacity.value);
     for (let y = 0; y <= n; y++){
         row = []
+        row2 = []
         for (let x = 0; x <= W; x++){
            row.push(0) 
+           row2.push(0)
         }
         dp.push(row)
+        dpDisplayList.push(row2)
     }
 
     for (let y = 0; y <= n; y++){
@@ -110,13 +115,21 @@ function generateDP(){
 
                 let notPick = dp[y-1][x];
 
-                dp[y][x] = Math.max(pick, notPick);
+                if (pick >= notPick){
+                    dp[y][x] = pick;
+                    dpDisplayList[y][x] = 1;
+                }
+                else if (pick < notPick){
+                    dp[y][x] = notPick;
+                    dpDisplayList[y][x] = 0;
+                }
             }
         }
     }
 
-    displayDP();
+    
     backtrack();
+    displayDP();
     
 }
 
@@ -134,7 +147,13 @@ function displayDP(){
         for (let j = 0; j < dp[i].length; j++){
             let cell = row.insertCell(-1);
             cell.innerHTML = dp[i][j];
-            cell.className = "cell"
+            if (dpDisplayList[i][j] == 1){
+                cell.className = "cell_Pick"
+            } else if (dpDisplayList[i][j] == 2){
+                cell.className = "cell_added"
+            } else{
+                cell.className = "cell_notPick"
+            }
         }
     }
 }
@@ -151,6 +170,7 @@ function backtrack(){
         if (dp[ib][kb] != dp[ib-1][kb]){
             iName = itemList[ib-1].itemName;
             item_output.push(iName);
+            dpDisplayList[ib][kb] = 2;
             kb = kb - itemList[ib-1].itemWeight;
             ib = ib-1;
         }
@@ -162,16 +182,15 @@ function backtrack(){
 
     solution.innerHTML = ''
     let row = solution.insertRow(-1);
-    row.innerHTML = "Solution"
-    if (item_output.length > 0){
+    let cell = row.insertCell(-1);
+    cell.innerHTML = "Solution:";
         for (let k = 0; k < item_output.length; k++){
-            let row = solution.insertRow(-1);
-            row.innerHTML = item_output[k]
-        } 
-    }
-    else{
-        let row = solution.insertRow(-1);
-        row.innerHTML = "None"
-    }
+            let cell = row.insertCell(-1);
+            cell.innerHTML = item_output[k]
+        }
+    
+    let row2 = solution.insertRow(-1);
+    let cell2 = row2.insertCell(-1);
+    cell2.innerHTML = "Total Value: " + dp[n][W];
 
 }

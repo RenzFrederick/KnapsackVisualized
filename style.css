@@ -189,19 +189,32 @@ input[type="number"] {
 #dpDisplay * {
     font-size: medium;
     text-align: center;
-    background-color: #f5cce8;
     border-radius: 10%;
     height: 50px;
     width: 50px;
     object-fit: contain;
 }
 
-.cell {
+.cell_Pick {
     height: 50px;
     width: 50px;
     border-radius: 12%;
+    background-color: #f5cce8;
 }
 
+.cell_notPick {
+    height: 50px;
+    width: 50px;
+    border-radius: 12%;
+    background-color: #b397aa;
+}
+
+.cell_added {
+    height: 50px;
+    width: 50px;
+    border-radius: 12%;
+    background-color: #dc92f9;
+}
 
 /* ===========================
    SOLUTION DISPLAY
