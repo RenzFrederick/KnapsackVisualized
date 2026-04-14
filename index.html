@@ -7,31 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Knapsack Problem Visualizer</h1>
-    <p>This is a simple visualizer for the Dynamic Programming approach in solving the classic Knapsack Problem.</p>
+    <img src="public/splodges.png" id="bgSplash">
+    <div id = "header">
+    <img src="public/heading.png">
+    </div>
     <div id = "UserInput">
-        <h3>Add Items</h3>
         <form>
-            Name: <input id="itemName" type="text" placeholder="Name"><br>
-            Item Value: <input id="itemValue" type="number" min="1" required value="1"><br>
-            Weight: <input id="itemWeight" type="number" min="1" required value="1"><br>
-            <button type="button" onclick="addItem()">Add Item</button>
-        </form>
-        <table id="itemDisplay">
-            <tr>
-            <th>Name</th>
-            <th>Value</th>
-            <th>Weight</th>
-            </tr>
-        </table>        
+            <input id="itemName" type="text" placeholder="Name"><br>
+            <input id="itemValue" type="number" min="1" required placeholder="Value"><br>
+            <input id="itemWeight" type="number" min="1" required placeholder="W"><br>
+            <div type="button" onclick="addItem()" id="addButton"><img src="public/addButton.png"></div>
+            <div type="button" onclick="generateDP()" id="solveButton"><img src="public/solveButton.png"></div>
+            <input id="capacity" type="number" min="1" required placeholder="C">
+            
+        </form>        
     </div>
 
-    <div>
-        <h3>Find Solution</h3>
-        <p>The problem will be solved using Bottom Up Tabulation approach.</p>
-        Knapsack Capacity <input id="capacity" type="number" min="1" required>
-        <button onclick="generateDP()">Solve</button>
-        <table id="dpDisplay"></table>
+    <div id="Display">
+        <div id="TableDisplay">
+            <table id="itemDisplay">
+                <tr>
+                <th>Name</th>
+                <th>Value</th>
+                <th>Weight</th>
+                </tr>
+            </table>
+            </div>
+        <div id ="DPDisplay">
+            <table id="dpDisplay"></table>
+        </div>
+    </div>
+    <div id="SolutionDisplay">  
+        <h5>Solution here</h5>             
         <p id="solution"></p>
     </div>
     <script src = "script.js"></script>

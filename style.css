@@ -1,0 +1,170 @@
+
+* {
+    font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
+    font-size: larger;
+    }
+
+body {
+   background-color: #1d2321; 
+   position: relative;
+   display: block;
+}
+
+input {
+    background-color: #f5cce8;
+    border-radius: 12%;
+    height: 75px;
+    width: 250px;
+    text-align: center;
+    margin: 5px
+}
+
+input[type="number"]{
+    width: 70px;
+    
+}
+#header {
+    height: 190px;
+    width: 570px;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#header img{
+    height: 250px;
+    width: 750px;
+    object-fit: contain;
+    padding: 0px
+}
+
+#UserInput {
+    display: flex;
+    background-color: #66516f;
+    margin: auto;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    width: 750px;
+    border-radius: 12px;
+    
+}
+
+#UserInput *{
+    display: inline-flex;
+    align-items: center;
+}
+
+#Display{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#Display div{
+    display: inline-flex;
+    margin: 10px;
+    background-color: #66516f;  
+    height: 350px;  
+    border-radius: 12px;
+    align-items: baseline;
+    justify-content: center;
+}
+
+#DPDisplay {
+    width: 550px;
+}
+
+#TableDisplay {
+    display: block;
+    width: 200px;
+}
+
+#bgSplash{
+    z-index: -1;
+    height: 1080px;
+    width: 1920px;
+    position:absolute;
+}
+
+#addButton{
+    height: 150px;
+    width: 75px;
+    display: flow;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    padding: 0px;
+}
+
+#addButton img{
+    height: 150px;
+    object-fit: contain;
+}
+
+#addButton img:hover{
+    filter: brightness(110%);
+}
+
+#solveButton{
+    height: 150px;
+    width: 75px;
+    display: flow;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    padding: 0px;
+}
+
+#solveButton img:hover{
+    filter: brightness(110%);
+}
+
+#solveButton img{
+    height: 150px;
+    object-fit: contain;
+}
+
+#itemWeight, #capacity{
+    font-size: x-large;
+}
+
+#itemValue{
+    font-size: large;
+}
+
+#itemDisplay *{
+    font-size: medium;
+    text-align: center;
+    background-color: #f5cce8;
+    border-radius: 10%;
+}
+
+#dpDisplay *{
+    font-size: medium;
+    text-align: center;
+    background-color: #f5cce8;
+    border-radius: 10%;
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+
+#SolutionDisplay{
+    display: flex;
+    background-color: #66516f;
+    margin: auto;
+    padding: 15px;
+    align-items: center;
+    justify-content: center;
+    width: 750px;
+    border-radius: 12px;
+}
+
+.cell {
+    height: 50px;
+    width: 50px;
+    border-radius: 12%;
+}

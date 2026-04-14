@@ -18,7 +18,7 @@ const displayHeader =
     </tr>`;
     
 const dpDisplay = document.getElementById("dpDisplay");
-const solution = document.getElementById("solution");
+const solution = document.getElementById("SolutionDisplay");
 
 let itemList = [];
 let errors = [];
@@ -55,6 +55,7 @@ let n = 0;
 let W = 0;
 
 function generateDP(){
+    
     dp = []
     n = itemList.length;
     W = Number(inputCapacity.value);
@@ -89,6 +90,7 @@ function generateDP(){
 
     displayDP();
     backtrack();
+    
 }
 
 function displayDP(){
@@ -105,11 +107,13 @@ function displayDP(){
         for (let j = 0; j < dp[i].length; j++){
             let cell = row.insertCell(-1);
             cell.innerHTML = dp[i][j];
+            cell.className = "cell"
         }
     }
 }
 
 function backtrack(){
+    
     let ib = n;
     let kb = W;
 
